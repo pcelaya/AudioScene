@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class OnTrigger : MonoBehaviour
 {
-    [SerializeField] public AudioSource audioSource;
+
+    public GameObject UI;
 
     object OnTriggerEnter(Collider other)
     {
         // Check if the object that entered the trigger is tagged as "Player"
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player has entered the trigger zone!");
-            audioSource.Play();
+            //GameObject.Find("UIInteract").SetActive(true);
+            UI.SetActive(true);
+            //audioSource.Play();
+        }
+        return null;
+    }
+
+    object OnTriggerExit(Collider other)
+    {
+        // Check if the object that exited the trigger is tagged as "Player"
+        if (other.CompareTag("Player"))
+        {
+            UI.SetActive(false);
+            //audioSource.Stop();
         }
         return null;
     }
