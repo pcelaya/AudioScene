@@ -36,10 +36,20 @@ public class OnTrigger : MonoBehaviour
     public void PlayAudio()
     {
         audioSource.Play();
+        interacted = true;
+        StartCoroutine(WaitForAudioToEnd());
     }
 
     public void StopAudio()
     {
         audioSource.Stop();
+        interacted = false;
     }
+
+    private IEnumerator WaitForAudioToEnd()
+    {
+        yield return new WaitWhile(() => audioSource.isPlaying);
+        interacted = false;
+    }
+
 }

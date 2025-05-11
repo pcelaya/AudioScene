@@ -24,12 +24,10 @@ public class interact : MonoBehaviour
             {
                 if(interactedObject.GetComponent<OnTrigger>().interacted == false)
                 {
-                    interactedObject.GetComponent<OnTrigger>().interacted = true;
                     interactedObject.GetComponent<OnTrigger>().PlayAudio();
                 }
                 else
                 {
-                    interactedObject.GetComponent<OnTrigger>().interacted = false;
                     interactedObject.GetComponent<OnTrigger>().StopAudio();
                 }
             }
