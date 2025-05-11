@@ -14,6 +14,30 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-6447997902160227247
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 421f0be9d314a7443b2fb1fa9786a80c
+  m_EffectName: Echo
+  m_MixLevel: 9851621502d2db044998bbed634c0e24
+  m_Parameters:
+  - m_ParameterName: Delay
+    m_GUID: 110200ebdb6ac5149a96c1b389f53a86
+  - m_ParameterName: Decay
+    m_GUID: 6ffad2905b545754bb7d4798dfd0070f
+  - m_ParameterName: Max channels
+    m_GUID: 08867030f5f9f06488774ffaa2f1adb4
+  - m_ParameterName: Drymix
+    m_GUID: 84f4d75cd593b3f4492ad82916439384
+  - m_ParameterName: Wetmix
+    m_GUID: 8b1558fe552a0b940872afb7f7d0ea1d
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-4312380417878066702
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -137,8 +161,12 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: a31ee261e21106b45a8ca52b94bbe24a
   m_FloatValues:
+    6ffad2905b545754bb7d4798dfd0070f: 0
     3eb3a3d32f5446d4d969f808b1477335: 22000
+    110200ebdb6ac5149a96c1b389f53a86: 1
+    84f4d75cd593b3f4492ad82916439384: 1
     e76092ed844cec64db87b4e7f8b19c01: -0.037667945
+    8b1558fe552a0b940872afb7f7d0ea1d: 0
   m_TransitionOverrides: {}
 --- !u!243 &1316157147092570067
 AudioMixerGroupController:
@@ -207,6 +235,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 4254895417183425814}
+  - {fileID: -6447997902160227247}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -221,7 +250,9 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: e36fbe9e6642e1544b508bc5db7901aa
   m_FloatValues:
+    6ffad2905b545754bb7d4798dfd0070f: 0.11
     268e8ef57590fe345940e53ce199e772: -3.1
     4200d0c8bd0ce7b47a398382cb60121d: -14.8
+    110200ebdb6ac5149a96c1b389f53a86: 16
     e76092ed844cec64db87b4e7f8b19c01: -0.037667945
   m_TransitionOverrides: {}
