@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class FishermanController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private AudioSource audioSource;
+    [SerializeField] private List<AudioClip> dialogue = new List<AudioClip>();
+
+    private void Awake()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            audioSource.clip = dialogue[Random.Range(0, dialogue.Count)];
+        }
+    }
+
+    object OnTriggerEnter(Collider other)
+    {
+        // Check if the object that entered the trigger is tagged as "Player"
+        if (other.CompareTag("Player"))
+        {
+            audioSource.clip = dialogue[Random.Range(0, dialogue.Count)];
+        }
+        return null;
     }
 }
