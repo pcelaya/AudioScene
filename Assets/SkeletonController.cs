@@ -42,4 +42,9 @@ public class SkeletonController : MonoBehaviour
         Vector3 tangentDirection = new Vector3(-Mathf.Sin(angle), 0, Mathf.Cos(angle));
         transform.rotation = Quaternion.LookRotation(tangentDirection);
     }
+
+    private void PlaySkeletonFootstep()
+    {
+        FootstepManager.Instance.PlayFootstep(FootstepType.Stone);
+    }
 }
