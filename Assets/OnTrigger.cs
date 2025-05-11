@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class OnTrigger : MonoBehaviour
 {
-
     public GameObject UI;
+    [SerializeField] public AudioSource audioSource;
+    public bool interacted = false;
 
     object OnTriggerEnter(Collider other)
     {
@@ -14,6 +15,7 @@ public class OnTrigger : MonoBehaviour
         {
             //GameObject.Find("UIInteract").SetActive(true);
             UI.SetActive(true);
+            UI.GetComponent<interact>().GetIntractableObject(gameObject);
             //audioSource.Play();
         }
         return null;
@@ -25,8 +27,19 @@ public class OnTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             UI.SetActive(false);
+            UI.GetComponent<interact>().RemoveIntractableObject();
             //audioSource.Stop();
         }
         return null;
+    }
+
+    public void PlayAudio()
+    {
+        audioSource.Play();
+    }
+
+    public void StopAudio()
+    {
+        audioSource.Stop();
     }
 }

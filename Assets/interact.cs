@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class interact : MonoBehaviour
 {
-    [SerializeField] public AudioSource audioSource;
     // Start is called before the first frame update
-    private bool interacted = false;
+    private GameObject interactedObject;
     void Start()
     {
         
@@ -17,16 +16,33 @@ public class interact : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (interacted)
+            if(interactedObject == null)
             {
-                interacted = false;
-                audioSource.Stop();
+                return;
             }
             else
             {
-                interacted = true;
-                audioSource.Play();
+                if(interactedObject.GetComponent<OnTrigger>().interacted == false)
+                {
+                    interactedObject.GetComponent<OnTrigger>().interacted = true;
+                    interactedObject.GetComponent<OnTrigger>().PlayAudio();
+                }
+                else
+                {
+                    interactedObject.GetComponent<OnTrigger>().interacted = false;
+                    interactedObject.GetComponent<OnTrigger>().StopAudio();
+                }
             }
         }
+    }
+
+    public void GetIntractableObject(GameObject obj)
+    {
+        interactedObject = obj;
+    }
+
+    public void RemoveIntractableObject()
+    {
+        interactedObject = null;
     }
 }
