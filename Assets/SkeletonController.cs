@@ -5,6 +5,7 @@ using UnityEngine;
 public class SkeletonController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private float speed = 2f;
     [SerializeField] private float circleRadius = 5f;
 
@@ -45,6 +46,7 @@ public class SkeletonController : MonoBehaviour
 
     private void PlaySkeletonFootstep()
     {
-        FootstepManager.Instance.PlayFootstep(FootstepType.Stone);
+        AudioClip footstep = FootstepManager.Instance.PlayFootstep(FootstepType.Stone);
+        audioSource.PlayOneShot(footstep);
     }
 }

@@ -43,17 +43,18 @@ public class FootstepManager : MonoBehaviour
         };
     }
 
-    public void PlayFootstep(FootstepType type)
+    public AudioClip PlayFootstep(FootstepType type)
     {
+        AudioClip randomClip = null;
         if (footstepLibrary.TryGetValue(type, out List<AudioClip> clips))
         {
             if (clips.Count == 0)
             {
-                return;
+                return randomClip;
             }
 
-            AudioClip randomClip = clips[Random.Range(0, clips.Count)];
-            audioSource.PlayOneShot(randomClip);
+            randomClip = clips[Random.Range(0, clips.Count)];
         }
+        return randomClip;
     }
 }
