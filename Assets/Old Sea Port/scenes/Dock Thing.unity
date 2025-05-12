@@ -4021,7 +4021,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690be6eaedbeb064d94788c06f6931c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: []
+  dialogue:
+  - {fileID: 8300000, guid: d6e5d3e3acfa5ca4bb6d79cb22b59866, type: 3}
+  - {fileID: 8300000, guid: 44917d9e5f14efe4f9764fad2952add4, type: 3}
+  - {fileID: 8300000, guid: d2367adb2ffc08e4ba4d8b9934186b79, type: 3}
 --- !u!65 &289950017
 BoxCollider:
   m_ObjectHideFlags: 0
